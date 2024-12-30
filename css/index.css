@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body {
+    font-family: Arial, Helvetica, "Noto Sans TC", sans-serif;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-ul {
+    display: flex;
+    list-style-type: none;
+    
+}
+
+.nav-li a {
+    color: black;
+    text-decoration: none;
+    color: #32beff;
+}
+
+.nav-closeWrap {
+    display: none;
+}
+
+.nav-close {
+    background-color: transparent;
+    color: #555;
+    border: none;
+    font-size: 40px;
+}
+
+.header-menu {
+    display: none;
+}
+
+.header-btn {
+    background-color: transparent;
+    color: #32beff;
+    border: 2px solid #32beff;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+.banner {
+    color: #32beff;
+}
