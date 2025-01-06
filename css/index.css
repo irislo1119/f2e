@@ -21,6 +21,12 @@ img {
     /* margin: 10px; */
 }
 
+.header-fixed {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+}
+
 .header-logo, .header-nav, .header-menu {
     padding: .5rem .7rem;
 }
@@ -126,6 +132,17 @@ img {
     object-fit: cover;
 }
 
+/* container */
+
+.h-container-m {
+
+}
+
+.h-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* animation */
 
 .ani-fade {
@@ -154,10 +171,35 @@ img {
     5% {
         opacity: 1;
     }
-    20% {
+    25% {
         opacity: 1;
     }
-    25% {
+    30% {
         opacity: 0;
+    }
+}
+
+.color-change {
+    animation-name: color-change;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes color-change {
+    0%{
+        color: var(--second-color);
+    }
+    5%{
+        color: var(--primary-color);
+    }
+    50%{
+        color: var(--primary-color);
+    }
+    55%{
+        color: var(--second-color);
+    }
+    100%{
+        color: var(--second-color);
     }
 }
