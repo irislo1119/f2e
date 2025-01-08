@@ -4,15 +4,116 @@
     --primary-color: #24b4d7;
     --second-color: #fff;
     --opacity-color: rgba(255,255,255,.4);
+    --radius: 5px;
 }
 
 body {
-    font-family: Arial, Helvetica, "Noto Sans TC", sans-serif;
+    font-family: 'Noto Sans TC', Arial, Helvetica, sans-serif;
 }
 
 img {
     vertical-align: bottom;
 }
+
+/* helper */
+
+.h-container-m {
+    max-width: 1200px;
+}
+
+.h-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h-img-resp {
+    max-width: 100%;
+    height: auto;
+}
+
+.h-row {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.h-gradient-stripe {
+    background-image: linear-gradient(
+        -45deg,
+        var(--opacity-color) 0%,
+        var(--opacity-color) 25%,
+        transparent 26%,
+        transparent 50%,
+        var(--opacity-color) 51%,
+        var(--opacity-color) 75%,
+        transparent 76%,
+        transparent 100%
+    );
+    background-size: 7px 7px;
+}
+
+
+/* animation */
+
+.ani-fade {
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.ani-delay-5 {
+    animation-delay: 5s;
+}
+
+.ani-delay-10 {
+    animation-delay: 10s;
+}
+
+.ani-delay-15 {
+    animation-delay: 15s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}
+
+.color-change {
+    animation-name: color-change;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes color-change {
+    0%{
+        color: var(--second-color);
+    }
+    5%{
+        color: var(--primary-color);
+    }
+    50%{
+        color: var(--primary-color);
+    }
+    55%{
+        color: var(--second-color);
+    }
+    100%{
+        color: var(--second-color);
+    }
+}
+
+/* header */
 
 .header {
     display: flex;
@@ -85,18 +186,6 @@ img {
     z-index: 10;
     /* background-color: rgba(255,255,255,.5); */
     padding: 5rem;
-    background-image: linear-gradient(
-        -45deg,
-        var(--opacity-color) 0%,
-        var(--opacity-color) 25%,
-        transparent 26%,
-        transparent 50%,
-        var(--opacity-color) 51%,
-        var(--opacity-color) 75%,
-        transparent 76%,
-        transparent 100%
-    );
-    background-size: 7px 7px;
     text-align: center;
 }
 
@@ -132,74 +221,158 @@ img {
     object-fit: cover;
 }
 
-/* container */
+/* section */
 
-.h-container-m {
-
+.section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
 
-.h-mx-auto {
-    margin-left: auto;
-    margin-right: auto;
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.3;
 }
 
-/* animation */
-
-.ani-fade {
-    opacity: 0;
-    animation-name: fade;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
+.section-desciption {
+    /* font-size: 1.2rem; */
+    line-height: 1.7;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.ani-delay-5 {
-    animation-delay: 5s;
+/* section-info */
+
+.section-info .section-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.ani-delay-10 {
-    animation-delay: 10s;
+.section-info .section-head {
+    width: 60%;
 }
 
-.ani-delay-15 {
-    animation-delay: 15s;
+.section-info .section-body {
+    width: 40%;
 }
 
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    25% {
-        opacity: 1;
-    }
-    30% {
-        opacity: 0;
-    }
+.section-info .section-foot {
+    width: 100%;
 }
 
-.color-change {
-    animation-name: color-change;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    
+.section-info .section-title {
+    color: var(--primary-color);
 }
 
-@keyframes color-change {
-    0%{
-        color: var(--second-color);
-    }
-    5%{
-        color: var(--primary-color);
-    }
-    50%{
-        color: var(--primary-color);
-    }
-    55%{
-        color: var(--second-color);
-    }
-    100%{
-        color: var(--second-color);
-    }
+.section-img-student {
+    position: relative;
+    clip-path: polygon(20% 0, 100% 0, 80% 70%, 0 70%);
+    transform: scale(1.1);
+    transform-origin: left top;
+    z-index: 2;
+}
+
+.section-img-discuss {
+    clip-path: polygon(50% 0, 100% 0, 65% 90%, 15% 90%);
+    transform: scale(2);
+    transform-origin: right top;
+}
+
+.section-info .section-foot {
+    width: 100%;
+}
+
+.section-foot {
+    text-align: center;
+}
+
+.section-btn {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: .8rem 1.2rem; 
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition-duration: .3s;
+}
+
+.section-btn:hover {
+    opacity: .8;
+}
+
+.section-btn-primary {
+    background-color: var(--primary-color);
+    color: var(--second-color);
+}
+
+.section-btn-light {
+    background-color: var(--second-color);
+    color: var(--primary-color);
+}
+
+/* section-subject */
+
+.section-subject {
+    background-color: var(--primary-color);
+}
+
+.section-subject .section-head {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-subject .section-title {
+    display: inline-block;
+    padding: .5em 1em;
+    background-color: var(--second-color);
+    color: var(--primary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    /* border-bottom: 1px solid #000; */
+}
+
+.section-grid {
+    display: flex;
+}
+
+.card {
+    position: relative;
+    width: 33%;
+    padding: 1rem;
+}
+
+.card-tag {
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+    padding: .6rem 1rem;
+    color: var(--second-color);
+    font-weight: bold;
+}
+
+.card-body {
+    background-color: var(--second-color);
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.card-text {
+    color: #aaa;
+    line-height: 1.5;
+}
+
+/* section-achievement */
+
+.section-achievement .section-head {
+    text-align: center;
+    margin-bottom: 4rem;
 }
