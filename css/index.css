@@ -21,6 +21,10 @@ img {
     max-width: 1200px;
 }
 
+.h-container-s {
+    max-width: 1000px;
+}
+
 .h-mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -373,9 +377,6 @@ img {
     font-weight: bold;
 }
 
-.card-body {
-}
-
 .card-title {
     font-size: 1.2rem;
     font-weight: bold;
@@ -391,47 +392,57 @@ img {
     margin: 1.5rem 1.5rem 2rem;
 }
 
-/* section-achievement */
+/* section-result */
 
-.section-achievement {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section-achievement .section-head {
+.section-result .section-head {
     text-align: center;
     margin-bottom: 4rem;
 }
 
-.section-achievement .section-body {
+/* .section-result .section-body {
     margin-bottom: 3rem;
-}
+} */
 
-.a {
+/* .result-card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-}
+} */
 
-.-item {
+.result {
     border: 1px solid transparent;
     /* height: 250px; */
     text-align: center;
     padding: 2rem 2rem 2.5rem;
     line-height: 1.5;
-    box-shadow: 0 0 25px rgba(0,0,0,.1);
 }
 
-.-important {
+.result-shadow {
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+.result-num {
     color: var(--primary-color);
     font-size: 50px;
 }
 
-.-text {
+.result-text {
     color: #aaa;
 }
 
-.-form {
-    
+.result-table {
+    border: 1px solid #aaa;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+thead tr {
+    background-color: #aaa;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #aaa;
 }
