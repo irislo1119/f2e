@@ -5,6 +5,12 @@
     --second-color: #fff;
     --opacity-color: rgba(255,255,255,.4);
     --radius: 5px;
+    --width-m: 1200px;
+    --width-s: 1000px;
+}
+
+*{
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,11 +24,11 @@ img {
 /* helper */
 
 .h-container-m {
-    max-width: 1200px;
+    max-width: var(--width-m);
 }
 
 .h-container-s {
-    max-width: 1000px;
+    max-width: var(--width-s);
 }
 
 .h-mx-auto {
@@ -431,18 +437,110 @@ img {
 }
 
 .result-table {
-    border: 1px solid #aaa;
+    /* border: 1px solid #ddd; */
     width: 100%;
     margin-top: 3rem;
     margin-bottom: 3rem;
     font-size: 1.2rem;
+}
+
+.tableWrap {
+    overflow: auto;
+}
+
+.result-table th {
+    font-weight: bold;
+}
+
+.result-table th, .result-table td {
+    line-height: 1.5;
+}
+
+.table-nowrap th, .table-nowrap td {
+    white-space: nowrap;
+}
+
+.table-stripe thead tr {
+    background-color: #eee;
+}
+
+.table-stripe tbody tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.table-border th, .table-border td {
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 1.2rem;
+}
+
+.table-hover tbody tr {
+    transition-duration: .3s;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #ceebf2;
+}
+
+.h-text-center {
     text-align: center;
 }
 
-thead tr {
-    background-color: #aaa;
+/* footer */
+
+.footer {
+    background-color: #333;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    line-height: 1.5;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #aaa;
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer-text {
+    font-size: .9rem;
+    color: rgba(255,255,255,.5);
+}
+
+.aside {
+    position: fixed;
+    bottom: 300px;
+    margin-left: calc(var(--width-m) + 30px);
+}
+
+/* social */
+
+.social {
+    display: block;
+    padding: 1rem .7rem;
+    color: #fff;
+}
+
+.social-ig {
+    background-image: linear-gradient(45deg, #F9D401, #F00817, #7E39AE);
+
+}
+
+.social-fb {
+    background-color: #0866FF;
+}
+
+.social-x {
+    background-color: #000;
+}
+
+.social-up {
+    color: rgba(0, 0, 0, .4);
+}
+
+@media screen and (max-width: 768px) {
+    .header-nav {
+        display: none;
+    }
+    .header-menu {
+        display: block;
+    }
 }
